@@ -1,17 +1,28 @@
-﻿CREATE DATABASE hotel
-
-CREATE TABLE empregados
+﻿CREATE TABLE empregados
 (
     nome varchar(100),
     codEmp integer NOT NULL,
     CONSTRAINT empregados_pkey PRIMARY KEY (codEmp)
 );
 
+CREATE TABLE hoteis
+(
+    codHotel integer NOT NULL,
+    nome varchar(100),
+    endereço varchar(250),
+    telefone integer,
+    CONSTRAINT hoteis_pkey PRIMARY KEY (codHotel)
+);
+
 CREATE TABLE quartos
 (
     nQrto integer NOT NULL,
     andar integer NOT NULL,
-    CONSTRAINT quartos_pkey PRIMARY KEY (nQrto)
+    CONSTRAINT quartos_fkey FOREIGN KEY (codHotel)
+        REFERENCES hoteis (codHotel) MATCH SIMPLE,
+    CONSTRAINT quartos_fkey2 FOREIGN KEY (id)
+        REFERENCES tipoQuarto (id) MATCH SIMPLE,
+    CONSTRAINT quartos_pkey PRIMARY KEY (nQrto,codHotel)
 );
 
 CREATE TABLE servicos
@@ -27,6 +38,10 @@ CREATE TABLE estadias
     dtCIn date,
     dtCOut date,
     codEstadia integer NOT NULL,
+    CONSTRAINT estadias_fkey FOREIGN KEY (nRegistro)
+        REFERENCES clientes (nRegistro) MATCH SIMPLE,
+    CONSTRAINT estadias_fkey2 FOREIGN KEY (codHotel)
+        REFERENCES hoteis (codHotel) MATCH SIMPLE,
     CONSTRAINT estadias_pkey PRIMARY KEY (codEstadia)
 );
 
@@ -44,16 +59,11 @@ CREATE TABLE reserva
     dataPagamento date,
     dataReserva date,
     camaExtra bool,
-    CONSTRAINT reserva_pkey PRIMARY KEY ()
-);
-
-CREATE TABLE hoteis
-(
-    codHotel integer NOT NULL,
-    nome varchar(100),
-    endereço varchar(250),
-    telefone integer,
-    CONSTRAINT hoteis_pkey PRIMARY KEY (codHotel)
+    CONSTRAINT clientes_fkey FOREIGN KEY (nRegistro)
+        REFERENCES clientes (nRegistro) MATCH SIMPLE,
+    CONSTRAINT hoteis_fkey FOREIGN KEY (codHotel)
+        REFERENCES hoteis (codHotel) MATCH SIMPLE,
+    CONSTRAINT reserva_pkey PRIMARY KEY (nRegistro,codHotel)
 );
 
 CREATE TABLE tipoQuarto
@@ -61,16 +71,17 @@ CREATE TABLE tipoQuarto
     id integer NOT NULL,
     nome varchar(100),
     camaExtra bool,
-    CONSTRAINT _pkey PRIMARY KEY ()
+    CONSTRAINT tipoQuarto_pkey PRIMARY KEY (id)
 );
 
 CREATE TABLE limpeza
 (
     dataLimpeza date,
     CONSTRAINT limpeza_fkey FOREIGN KEY (nQrto)
-        REFERENCES quartos (nQrto) MATCH SIMPLE
+        REFERENCES quartos (nQrto) MATCH SIMPLE,
     CONSTRAINT limpeza_fkey FOREIGN KEY (codEmp)
-        REFERENCES empregados (codEmp) MATCH SIMPLE
+        REFERENCES empregados (codEmp) MATCH SIMPLE,
+    CONSTRAINT limpeza_pkey PRIMARY KEY (nQrto,codEmp)
 );
 
 CREATE TABLE oferece
@@ -78,7 +89,18 @@ CREATE TABLE oferece
     dataServico date,
     horaServico timestamp,
     CONSTRAINT oferece_fkey FOREIGN KEY (codS)
-        REFERENCES servicos (codS) MATCH SIMPLE
-    CONSTRAINT oferece_fkey FOREIGN KEY (codEstadia)
-        REFERENCES estadias (CodEstadia) MATCH SIMPLE
+        REFERENCES servicos (codS) MATCH SIMPLE,
+    CONSTRAINT oferece_fkey2 FOREIGN KEY (codEstadia)
+        REFERENCES estadias (CodEstadia) MATCH SIMPLE,
+    CONSTRAINT oferece_pkey PRIMARY KEY (codS,codEstadia)
+);
+
+CREATE TABLE preco
+(
+    valor money,
+    CONSTRAINT preco_fkey FOREIGN KEY (codHotel)
+        REFERENCES hoteis (codHotel) MATCH SIMPLE,
+    CONSTRAINT preco_fkey2 FOREIGN KEY (id)
+        REFERENCES tipoQuarto (id) MATCH SIMPLE,
+    CONSTRAINT preco_pkey PRIMARY KEY (codHotel,id)
 );
