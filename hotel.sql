@@ -46,7 +46,7 @@ CREATE TABLE servicos
 CREATE TABLE clientes
 (
     nRegistro integer NOT NULL AUTO_INCREMENT,
-    nome varchar(100),
+    nome varchar(100) NOT NULL,
     endereço varchar(250),
     telefone integer,
     CONSTRAINT clientes_pkey PRIMARY KEY (nRegistro)
