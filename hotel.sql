@@ -117,3 +117,11 @@ CREATE TABLE preco
         REFERENCES tipoQuarto (id) MATCH SIMPLE,
     CONSTRAINT preco_pkey PRIMARY KEY (codHotel,id)
 );
+
+CREATE DEFINER=`root`@`localhost` FUNCTION `insereCliente`(`nome` VARCHAR(100), `endereco` VARCHAR(250), `telefone` INT) RETURNS int(11)
+    NO SQL
+    DETERMINISTIC
+BEGIN
+INSERT INTO clientes VALUES (null, nome, endereco, telefone);
+RETURN 1;
+END
