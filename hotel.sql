@@ -122,6 +122,6 @@ CREATE DEFINER=`root`@`localhost` FUNCTION `insereCliente`(`nome` VARCHAR(100), 
     NO SQL
     DETERMINISTIC
 BEGIN
-INSERT INTO clientes VALUES (null, nome, endereco, telefone);
-RETURN 1;
+    INSERT INTO clientes VALUES (null, nome, endereco, telefone);
+    RETURN 1;
 END

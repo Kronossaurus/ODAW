@@ -1,9 +1,6 @@
 <?php
-	if (!$conexao = mysql_connect('localhost','root','')) {
-		die('Não conectou');
-	}
-	$bd = 'hotel';
-	mysql_select_db($bd);
+	$mysqli = new mysqli("localhost", "root", "");
+	$mysqli->mysql_select_db('hotel');
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,26 +9,26 @@
 	<title>CRUD de Clientes</title>
 </head>
 <body>
-	<form name="formClientes" method="POST">
-		<table>
+	<form name="formClientes" method="POST" action="insereCliente.php">
+		<table align="center">
 			<tr>
-				<td colspan="2" align="center">Clientes</td>
+				<td colspan="2" align="center">Inserir Clientes</td>
 			</tr>
-			<tr>
+			<!--<tr>
 				<td>Código:</td>
 				<td><input type="text" name="idCliente"></input></td>
-			</tr>
+			</tr>-->
 			<tr>
 				<td>Nome:</td>
-				<td><input type="text" name="nomeCliente"></input></td>
+				<td><input type="text" name="nomeCliente" autocomplete="off"></input></td>
 			</tr>
 			<tr>
 				<td>Endereço:</td>
-				<td><input type="text" name="enderecoCliente"></input></td>
+				<td><input type="text" name="enderecoCliente" autocomplete="off"></input></td>
 			</tr>
 			<tr>
 				<td>Telefone:</td>
-				<td><input type="text" name="foneCliente"></input></td>
+				<td><input type="text" name="foneCliente" autocomplete="off"></input></td>
 			</tr>
 			<tr>
 				<td colspan="2">
