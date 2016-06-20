@@ -6,14 +6,16 @@
 	$quarto = $_POST['tipoQuarto']; //AQUI É BOOL, MUDAR NA QUERY
 	$dtReserva = $_POST['dataReserva'];
 
-	$query = sprintf("SELECT insereReserva('%s', '%s', '%s', '%s');"//terminar
+	$query = $mysqli->prepare("INSERT INTO reserva VALUES(?,?,?,?);");//inserindo com prepared statements
+	$query->bind_param("ssss",$nome,$hotel,$quarto,$dtReserva);
 
-	$result = $mysqli->query($query);
+	$result = $query->execute();
 	if(!$result){
 		die("Erro na inserção");
 		echo mysqli_error();
 	}
 	else
 		echo "Sucesso";
-
+	$query->close();
+	$mysqli->close();
 ?>
