@@ -77,7 +77,7 @@ CREATE TABLE reserva
         REFERENCES clientes (nRegistro) MATCH SIMPLE,
     CONSTRAINT hoteis_fkey FOREIGN KEY (codHotel)
         REFERENCES hoteis (codHotel) MATCH SIMPLE,
-    CONSTRAINT reserva_pkey PRIMARY KEY (nRegistro,codHotel)
+    CONSTRAINT reserva_pkey PRIMARY KEY (nRegistro,codHotel,dataReserva)
 );
 
 CREATE TABLE limpeza
