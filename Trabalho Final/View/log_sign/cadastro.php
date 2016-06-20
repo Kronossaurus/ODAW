@@ -6,71 +6,72 @@
 <html >
   <head>
     <meta charset="UTF-8">
-    <title>Efetuar Reserva</title>
+    <title>Sign-Up/Login Form</title>
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
     
     <link rel="stylesheet" href="css/normalize.css">
 
     
         <link rel="stylesheet" href="css/style.css">
-
     
   </head>
 
   <body>
 
     <div class="form">
+      
+      <ul class="tab-group">
+        <li class="tab active"><a href="#signup">Cadastre-se</a></li>
+        <li class="tab"><a href="#login">Entre</a></li>
+      </ul>
+      
       <div class="tab-content">
         <div id="signup">   
-          <h1>Efetuar Reserva</h1>
+          <h1>Cadastre-se</h1>
           
           <form action="/" method="post">
           
           <div class="top-row">
             <div class="field-wrap">
               <label>
-                Hotel<span class="req">*</span>
+                Nome Completo<span class="req">*</span>
               </label>
-              <input type="text" required autocomplete="off" name="nomeHotel" />
+              <input type="text" required autocomplete="off" name="nomeCliente" />
             </div>
-        
-            <div class="field-wrap">
-              <label>
-                Tipo de quarto<span class="req">*</span>
-              </label>
-              <input type="text"required autocomplete="off"/ name="tipoQuarto">
-            </div>
-          </div>
 
           <div class="field-wrap">
             <label>
-            <span class="req">*</span>
+              Endereço<span class="req">*</span>
             </label>
-            <input type="date"required autocomplete="off"/ name="dataReserva">
+            <input type="text"required autocomplete="off" name="enderecoCliente"/>
           </div>
-
+          
           <div class="field-wrap">
-              <label>
-                Cliente<span class="req">*</span>
-              </label>
-              <input type="text"required autocomplete="off"/ name="nomeCliente">
-            </div>
+            <label>
+              Telefone<span class="req">*</span>
+            </label>
+            <input type="text"required autocomplete="off" name="foneCliente"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              CPF<span class="req">*</span>
+            </label>
+            <input type="text"required autocomplete="off" name="cpfCliente"/>
           </div>
 
-          <button type="submit" class="button button-block" formaction="insereReserva.php" />Reservar</button>
+          <button type="submit" formaction="insereCliente.php" class="button button-block"/>Começar agora</button>
           
           </form>
 
         </div>
+      
       </div><!-- tab-content -->
       
 </div> <!-- /form -->
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
         <script src="js/index.js"></script>
-
-    
-    
     
   </body>
 </html>
