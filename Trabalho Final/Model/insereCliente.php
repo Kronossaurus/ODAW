@@ -4,11 +4,12 @@
 	$nome = $_POST['nomeCliente'];
 	$endereço = $_POST['enderecoCliente'];
 	$telefone = $_POST['foneCliente'];
+	$cpf = $_POST['cpfCliente'];
 	
-	$query = sprintf("SELECT insereCliente('%s', '%s', %d);",
+	$query = sprintf("SELECT insereCliente('%s', '%s', %d, %d);",
 		$mysqli->real_escape_string($nome),
 		$mysqli->real_escape_string($endereço),
-		$telefone);
+		$telefone, $cpf);
 	
 	$result = $mysqli->query($query);
 	if (!$result) {
