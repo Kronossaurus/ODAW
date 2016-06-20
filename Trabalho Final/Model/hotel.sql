@@ -49,6 +49,7 @@ CREATE TABLE clientes
     nome varchar(100) NOT NULL,
     endereço varchar(250),
     telefone integer,
+	cpf integer,
     CONSTRAINT clientes_pkey PRIMARY KEY (nRegistro)
 );
 
@@ -118,10 +119,10 @@ CREATE TABLE preco
     CONSTRAINT preco_pkey PRIMARY KEY (codHotel,id)
 );
 
-CREATE DEFINER=`root`@`localhost` FUNCTION `insereCliente`(`nome` VARCHAR(100), `endereco` VARCHAR(250), `telefone` INT) RETURNS int(11)
+CREATE DEFINER=`root`@`localhost` FUNCTION `insereCliente`(`nome` VARCHAR(100), `endereco` VARCHAR(250), `telefone` INT, `cpf` INT) RETURNS int(11)
     NO SQL
     DETERMINISTIC
 BEGIN
-    INSERT INTO clientes VALUES (null, nome, endereco, telefone);
+    INSERT INTO clientes VALUES (null, nome, endereco, telefone, cpf);
     RETURN 1;
 END
