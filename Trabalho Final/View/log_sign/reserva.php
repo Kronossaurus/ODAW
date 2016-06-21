@@ -57,7 +57,7 @@
             </div>
           </div>
 
-          <button type="submit" class="button button-block" formaction="insereReserva.php" />Reservar</button>
+          <button type="submit" class="button button-block" formaction="../../Model/insereReserva.php" />Reservar</button>
           
           </form>
         </div>
@@ -95,7 +95,7 @@
             <input type="date" required autocomplete="off" name="dataReservaPesquisa" />
           </div>
 
-          <button type="submit" class="button button-block" formaction="pesquisaReserva.php" />Pesquisar</button>
+          <button type="submit" class="button button-block" formaction="../../Model/pesquisaReserva.php" />Pesquisar</button>
           
           </form>
         </div>
