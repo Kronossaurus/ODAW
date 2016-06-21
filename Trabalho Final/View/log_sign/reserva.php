@@ -98,8 +98,8 @@
             <input type="date" required autocomplete="off" name="dataReservaPesquisa" />
           </div>
           
-          <button type="submit" class="button button-block" formaction="../../Model/pesquisaReserva.php" />Pesquisar</button>
-          
+          <button type="submit" class="button button-block" formaction="../../Model/pesquisaReserva.php">Pesquisar</button>
+          <button type="submit" class="button button-block" formaction="../../Model/efetuaPagamento.php">Efetuar Pagamento</button>
           </form>
 
         </div>

@@ -1,5 +1,5 @@
 <?php
-	include_once 'conexão.php'
+	include_once 'conexao.php'
 
 	$nome = $_POST['nomeCliente'];
 	$hotel = $_POST['nomeHotel'];
