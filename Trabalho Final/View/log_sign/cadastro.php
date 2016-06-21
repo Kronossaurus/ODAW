@@ -19,14 +19,8 @@
   <body>
 
     <div class="form">
-      
-      <ul class="tab-group">
-        <li class="tab active"><a href="#signup">Cadastre-se</a></li>
-        <li class="tab"><a href="#login">Entre</a></li>
-      </ul>
-      
       <div class="tab-content">
-        <div id="signup">   
+        <div id="cadastro">   
           <h1>Cadastre-se</h1>
           
           <form action="/" method="post">
@@ -60,7 +54,7 @@
             <input type="text"required autocomplete="off" name="cpfCliente"/>
           </div>
 
-          <button type="submit" formaction="insereCliente.php" class="button button-block"/>Começar agora</button>
+          <button type="submit" formaction="../../Model/insereCliente.php" class="button button-block"/>Começar agora</button>
           
           </form>
 

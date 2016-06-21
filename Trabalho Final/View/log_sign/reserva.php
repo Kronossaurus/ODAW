@@ -67,7 +67,7 @@
       <!-- PESQUISAR RESERVA -->
       <div class="form">
       <div class="tab-content">
-        <div id="signup">   
+        <div id="search">   
           <h1>Pesquisar Reserva</h1>
           
           <form action="/" method="post">
