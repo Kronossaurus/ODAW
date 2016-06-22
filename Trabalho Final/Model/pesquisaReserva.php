@@ -1,5 +1,5 @@
 <?php
-	include_once 'conexao.php'
+	include_once 'conexao.php';
 
 	$codHotel = $_POST['codHotelPesquisa'];
 	$nRegistro = $_POST['numRegistroPesquisa'];

@@ -74,10 +74,13 @@ CREATE TABLE IF NOT EXISTS reserva
     camaExtra bool,
     codHotel integer NOT NULL,
     nRegistro integer NOT NULL,
+    tipoQuarto integer NOT NULL,
     CONSTRAINT clientes_fkey FOREIGN KEY (nRegistro)
         REFERENCES clientes (nRegistro) MATCH SIMPLE,
     CONSTRAINT hoteis_fkey FOREIGN KEY (codHotel)
         REFERENCES hoteis (codHotel) MATCH SIMPLE,
+    CONSTRAINT tipoQuarto_fkey FOREIGN KEY (tipoQuarto)
+        REFERENCES tipoQuarto (id) MATCH SIMPLE,
     CONSTRAINT reserva_pkey PRIMARY KEY (nRegistro,codHotel,dataReserva)
 );
 

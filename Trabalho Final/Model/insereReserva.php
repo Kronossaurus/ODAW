@@ -6,6 +6,7 @@
 	$codHotel 		= $_POST['codHotel'];//era nomeHotel
 	$quarto 		= $_POST['tipoQuarto']; //AQUI É BOOL, MUDAR NA QUERY
 	$dataReserva 	= $_POST['dataReserva'];
+	$tipoQuarto		= $_POST['tipoQuarto'];
 
 
 	$query = $mysqli->prepare("INSERT INTO reserva (dataReserva,camaExtra,codHotel,nRegistro) VALUES(?,?,?,?);");//inserindo com prepared statements

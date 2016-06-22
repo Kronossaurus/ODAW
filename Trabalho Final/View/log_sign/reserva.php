@@ -34,14 +34,14 @@
               <label>
                 Hotel<span class="req"></span>
               </label>
-              <input type="text" required autocomplete="off" name="nomeHotel" />
+              <input type="text" required autocomplete="off" name="codHotel" />
             </div>
         
             <div class="field-wrap">
               <label>
                 Tipo de quarto<span class="req"></span>
               </label>
-              <input type="text"required autocomplete="off"name="tipoQuarto"/>
+              <input type="text"required autocomplete="off" name="tipoQuarto"/>
             </div>
           </div>
 
@@ -64,7 +64,7 @@
               <label>
                 Cliente<span class="req"></span>
               </label>
-              <input type="text"required autocomplete="off" name="nomeCliente"/>
+              <input type="text"required autocomplete="off" name="codCliente"/>
             </div>
           </div>
 
