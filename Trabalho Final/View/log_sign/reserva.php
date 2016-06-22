@@ -1,7 +1,3 @@
-<?php
-	include_once '../../Model/conexao.php';
-?>
-
 <!DOCTYPE html>
 <html >
   <head>
@@ -45,7 +41,15 @@
               <label>
                 Tipo de quarto<span class="req"></span>
               </label>
-              <input type="text"required autocomplete="off"/ name="tipoQuarto">
+              <input type="text"required autocomplete="off"name="tipoQuarto"/>
+            </div>
+          </div>
+
+          <div class="field-wrap">
+              <label>
+                Cama Extra<span class="req"></span>
+              </label>
+              <input type="checkbox"required name="camaExtra"/>
             </div>
           </div>
 
@@ -53,18 +57,18 @@
             <label>
             <span class="req"></span>
             </label>
-            <input type="date"required autocomplete="off"/ name="dataReserva">
+            <input type="date"required autocomplete="off" name="dataReserva"/>
           </div>
           
           <div class="field-wrap">
               <label>
                 Cliente<span class="req"></span>
               </label>
-              <input type="text"required autocomplete="off"/ name="nomeCliente">
+              <input type="text"required autocomplete="off" name="nomeCliente"/>
             </div>
           </div>
 
-          <button type="submit" class="button button-block" formaction="../../Model/insereReserva.php" />Reservar</button>
+          <button type="submit" class="button button-block" formaction="../../Model/insereReserva.php">Reservar</button>
           
           </form>
 
