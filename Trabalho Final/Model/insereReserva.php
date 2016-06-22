@@ -1,15 +1,15 @@
 <?php
 	include_once 'conexao.php';
 
-	$dataReserva 	= date("Y-m-d H:i:s");
 	$camaExtra		= $_POST['camaExtra'];
-	$nome 			= $_POST['nomeCliente'];
-	$hotel 			= $_POST['nomeHotel'];
+	$nRegistro		= $_POST['nRegistro'];//aqui tava nomeCliente mas a consulta é com o cod
+	$codHotel 		= $_POST['codHotel'];//era nomeHotel
 	$quarto 		= $_POST['tipoQuarto']; //AQUI É BOOL, MUDAR NA QUERY
-	$dtReserva 		= $_POST['dataReserva'];
+	$dataReserva 	= $_POST['dataReserva'];
+
 
 	$query = $mysqli->prepare("INSERT INTO reserva (dataReserva,camaExtra,codHotel,nRegistro) VALUES(?,?,?,?);");//inserindo com prepared statements
-	$query->bind_param("ssss",$dataReserva,$hotel,$quarto,$dtReserva);
+	$query->bind_param("ssss",$dataReserva,$camaExtra,$codHotel,$nRegistro);
 
 	$result = $query->execute();
 	if(!$result){
