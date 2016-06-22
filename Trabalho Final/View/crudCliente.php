@@ -1,6 +1,3 @@
-<?php
-	include_once 'conexão.php';
-?>
 <!DOCTYPE html>
 <html>
 <head>

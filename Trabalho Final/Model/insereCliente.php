@@ -1,5 +1,5 @@
 <?php
-	include_once 'conexão.php';
+	include_once 'conexao.php';
 	//$nRegistro = $_POST['idCLiente'];
 	$nome = $_POST['nomeCliente'];
 	$endereço = $_POST['enderecoCliente'];

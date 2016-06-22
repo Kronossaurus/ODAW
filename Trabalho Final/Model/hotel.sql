@@ -1,11 +1,11 @@
-﻿CREATE TABLE empregados
+﻿CREATE TABLE IF NOT EXISTS empregados
 (
     nome varchar(100),
     codEmp integer NOT NULL AUTO_INCREMENT,
     CONSTRAINT empregados_pkey PRIMARY KEY (codEmp)
 );
 
-CREATE TABLE hoteis
+CREATE TABLE IF NOT EXISTS hoteis
 (
     codHotel integer NOT NULL AUTO_INCREMENT,
     nome varchar(100),
@@ -14,7 +14,7 @@ CREATE TABLE hoteis
     CONSTRAINT hoteis_pkey PRIMARY KEY (codHotel)
 );
 
-CREATE TABLE tipoQuarto
+CREATE TABLE IF NOT EXISTS tipoQuarto
 (
     id integer NOT NULL AUTO_INCREMENT,
     nome varchar(100),
@@ -22,7 +22,7 @@ CREATE TABLE tipoQuarto
     CONSTRAINT tipoQuarto_pkey PRIMARY KEY (id)
 );
 
-CREATE TABLE quartos
+CREATE TABLE IF NOT EXISTS quartos
 (
     nQrto integer NOT NULL,
     andar integer NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE quartos
     CONSTRAINT quartos_pkey PRIMARY KEY (nQrto,codHotel)
 );
 
-CREATE TABLE servicos
+CREATE TABLE IF NOT EXISTS servicos
 (
     codS integer NOT NULL AUTO_INCREMENT,
     tipoS varchar(100),
@@ -43,7 +43,7 @@ CREATE TABLE servicos
     CONSTRAINT servicos_pkey PRIMARY KEY (codS)
 );
 
-CREATE TABLE clientes
+CREATE TABLE IF NOT EXISTS clientes
 (
     nRegistro integer NOT NULL AUTO_INCREMENT,
     nome varchar(100) NOT NULL,
@@ -53,7 +53,7 @@ CREATE TABLE clientes
     CONSTRAINT clientes_pkey PRIMARY KEY (nRegistro)
 );
 
-CREATE TABLE estadias
+CREATE TABLE IF NOT EXISTS estadias
 (
     dtCIn date,
     dtCOut date,
@@ -67,7 +67,7 @@ CREATE TABLE estadias
     CONSTRAINT estadias_pkey PRIMARY KEY (codEstadia)
 );
 
-CREATE TABLE reserva
+CREATE TABLE IF NOT EXISTS reserva
 (
     dataPagamento date,
     dataReserva date,
@@ -81,7 +81,7 @@ CREATE TABLE reserva
     CONSTRAINT reserva_pkey PRIMARY KEY (nRegistro,codHotel,dataReserva)
 );
 
-CREATE TABLE limpeza
+CREATE TABLE IF NOT EXISTS limpeza
 (
     dataLimpeza date,
     codHotel integer NOT NULL,
@@ -94,7 +94,7 @@ CREATE TABLE limpeza
     CONSTRAINT limpeza_pkey PRIMARY KEY (nQrto,codEmp,dataLimpeza)
 );
 
-CREATE TABLE oferece
+CREATE TABLE IF NOT EXISTS oferece
 (
     dataServico date,
     horaServico timestamp,
@@ -107,7 +107,7 @@ CREATE TABLE oferece
     CONSTRAINT oferece_pkey PRIMARY KEY (codS,codEstadia,dataServico,horaServico)
 );
 
-CREATE TABLE preco
+CREATE TABLE IF NOT EXISTS preco
 (
     valor double,
     codHotel integer NOT NULL,
