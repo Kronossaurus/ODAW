@@ -10,12 +10,14 @@
 
 	$result = $query->execute();
 	if(!$result){
-		die("Erro na inserção");
 		echo mysqli_error();
+		die("Erro na inserção");
 	}
 	else
 	{
-		$row = $result->fetch_row(); //resultado
+		$query->bind_result($dataPagamento,$dataReserva,$camaExtra,$codHotel,$nRegistro,$tipoQuarto);
+		$query->fetch(); //resultado
+		printf("%s, %s, %s, %s, %s, %s\n",$dataPagamento,$dataReserva,$camaExtra,$codHotel,$nRegistro,$tipoQuarto);
 	}
 	$query->close();
 	$mysqli->close();

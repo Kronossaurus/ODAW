@@ -76,7 +76,7 @@
         <div id="search">   
           <h1>Pesquisar Reserva</h1>
           
-          <form action="/" method="post">
+          <form method="post">
           
            <div class="top-row">
             <div class="field-wrap">
@@ -90,7 +90,7 @@
               <label>
                 Num. de Registro<span class="req"></span>
               </label>
-              <input type="text" required autocomplete="off" name="numRegistroPesquisa /">
+              <input type="text" required autocomplete="off" name="numRegistroPesquisa"/>
             </div>
           </div>
           
