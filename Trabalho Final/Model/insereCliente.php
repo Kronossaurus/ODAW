@@ -6,7 +6,7 @@
 	$telefone = $_POST['foneCliente'];
 	$cpf = $_POST['cpfCliente'];
 	
-	$query = sprintf("SELECT insereCliente('%s', '%s', %d, %d);",
+	$query = sprintf("SELECT insereCliente('%s', '%s', %d, %d);", //criar a função manualmente no banco
 		$mysqli->real_escape_string($nome),
 		$mysqli->real_escape_string($endereço),
 		$telefone, $cpf);

@@ -12,8 +12,8 @@
 
 	$result = $query->execute();
 	if(!$result){
-		die("Erro na inserção");
 		echo mysqli_error();
+		die("Erro na inserção");
 	}
 	$query->close();
 	$mysqli->close();
