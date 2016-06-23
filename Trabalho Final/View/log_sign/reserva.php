@@ -50,8 +50,7 @@
                 Cama Extra<span class="req"></span>
               </label>
               <input type="checkbox"required name="camaExtra"/>
-            </div>
-          </div>
+           </div><br>
 
           <div class="field-wrap">
             <label>
